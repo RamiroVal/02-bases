@@ -10,18 +10,16 @@ export class ListComponent {
   @Input()
   public characterList: Character[] = [
     {
+      id: '',
       name: 'Trunks',
       power: 10,
     },
   ];
 
   @Output()
-  public idCharacter: EventEmitter<number> = new EventEmitter();
+  public idCharacter: EventEmitter<string> = new EventEmitter();
 
-  onDeleteCharacter(index: number): void {
-    // TODO: Emitir el ID del personaje
-    console.log(index);
-
-    this.idCharacter.emit(index);
+  onDeleteCharacter(id: string): void {
+    this.idCharacter.emit(id);
   }
 }
